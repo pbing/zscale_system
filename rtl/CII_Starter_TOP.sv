@@ -174,18 +174,18 @@ module CII_Starter_TOP
       .io_keys_pslverr (pbus_keys.pslverr),
       .init);
 
-   poci_keys poci_keys
-     (.pclk,
-      .presetn,
-      .bus (pbus_keys),
-      .key (KEY),
-      .sw  (SW));
-
-   poci_led_driver poci_led_driver
+   poci_leds poci_leds
      (.pclk,
       .presetn,
       .bus  (pbus_leds),
       .hex  ({HEX3, HEX2, HEX1, HEX0}),
       .ledg (LEDG),
       .ledr (LEDR));
+
+   poci_keys poci_keys
+     (.pclk,
+      .presetn,
+      .bus (pbus_keys),
+      .key (KEY),
+      .sw  (SW));
 endmodule
